@@ -7,6 +7,7 @@
 <!-- Add Bootstrap 4 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <!-- Add custom CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
 <style>
@@ -18,8 +19,73 @@ body {
     padding: 0;
     line-height: 2;
     background: linear-gradient(90deg, #1e5799, #2989d8);
+
+  justify-content: center;
+  align-items: center;
+  
   }
   
+  .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.5s;
+}
+
+.icon:hover {
+  transform: scale(1.4);
+}
+
+.icon i {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.github {
+  background-color: #333333;
+
+}
+
+.instagram {
+  background-image: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+.icon::before {
+  content: attr(data-title);
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  transform: translateX(-100%)translateY(100%) scale(0.2);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.9s;
+  pointer-events: none;
+}
+
+.icon:hover::before {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+
   header {
     color: #ffffff;
     /* padding: 1rem; */
@@ -152,14 +218,46 @@ body {
   } */
   
   @media (max-width: 767px) {
-    h1 {
-      font-size: 2rem;
-    }
-  
-    .container {
-      padding: 1rem;
-    }
+  h1 {
+    font-size: 1rem;
   }
+
+  .container {
+    padding: 1rem;
+    box-shadow: none;
+  }
+
+  img {
+    height: 150px;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    margin: 12px 5px;
+    padding: 1rem;
+  }
+
+  ol {
+    font-size: 0.8rem;
+    padding: 3px 6px;
+  }
+
+  h3, h5, p {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    font-size: large;
+  }
+}
+
   
 </style>
 </head>
@@ -211,7 +309,11 @@ body {
         <!-- <div class="image-container">
           <img src="images/tarek.jpg" alt="Tarek Barakat picture" />
         </div> -->
-      
+        <div class="social-icons">
+          <a href="https://github.com/Tarek997" class="icon github" data-title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/tarek97ma?igshid=ZDdkNTZiNTM=" class="icon instagram" data-title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/tarek-barakat-software-engineer/" class="icon linkedin" data-title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
     <section>
         <h4> About me</h4>
         <ul>
@@ -235,8 +337,15 @@ body {
             <li>Responsive web design: Ensuring websites look and work well on various devices and browsers</li>
         </ul>
       </section>
+
+      
     </div>
       <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
+        <div class="social-icons">
+          <a href="https://github.com/Tarek997" class="icon github" data-title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/tarek97ma?igshid=ZDdkNTZiNTM=" class="icon instagram" data-title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/tarek-barakat-software-engineer/" class="icon linkedin" data-title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
         <section>
           <div><h3>Innodatatics - USA</h3>
         <h5>Internship Project - eCommerce Portal-Shopping Cart</h5> <p>Nov 2022 - Dec 2022</p>
@@ -302,7 +411,7 @@ body {
                   Assignment Services, PKFoodStreet, KM Food Scan
                   and also Adbuzxer am managing these websites with
                   their Facebook, Instagram and Twitter accounts.</li>
-             
+            
                 <li>Doing Facebook and Instagram ads for 2 websites.</li>
                 <li>I was working to organize their websites to match SEO
                   conditions to be in the top of Google search engine,
@@ -362,6 +471,11 @@ body {
         </div>
 
       <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+        <div class="social-icons">
+          <a href="https://github.com/Tarek997" class="icon github" data-title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/tarek97ma?igshid=ZDdkNTZiNTM=" class="icon instagram" data-title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/tarek-barakat-software-engineer/" class="icon linkedin" data-title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
         <section style="background-color: white;" id="skills" class="tab-content">
         
           <h4>Programmin Languages:</h4>
@@ -408,7 +522,11 @@ body {
 
 
       <div class="tab-pane fade" id="certification" role="tabpanel" aria-labelledby="certification-tab">
-        
+        <div class="social-icons">
+          <a href="https://github.com/Tarek997" class="icon github" data-title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/tarek97ma?igshid=ZDdkNTZiNTM=" class="icon instagram" data-title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/tarek-barakat-software-engineer/" class="icon linkedin" data-title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
         <section id="certification" class="tab-content">
           <div class="certification">
             <h3>Full Stack Web Developer with 360DigiTMG</h3>
@@ -439,7 +557,11 @@ body {
 
       
       <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="education-tab">
-        
+        <div class="social-icons">
+          <a href="https://github.com/Tarek997" class="icon github" data-title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/tarek97ma?igshid=ZDdkNTZiNTM=" class="icon instagram" data-title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/tarek-barakat-software-engineer/" class="icon linkedin" data-title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
         <section style="background-color: white;"id="education" class="tab-content">
           <div class="education">
             <h3>Master of Information Technology (IT)</h3>
@@ -477,8 +599,12 @@ body {
         </section>
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        
-
+        <div class="social-icons">
+          <a href="https://github.com/Tarek997" class="icon github" data-title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/tarek97ma?igshid=ZDdkNTZiNTM=" class="icon instagram" data-title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/tarek-barakat-software-engineer/" class="icon linkedin" data-title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+<br>
         <footer>
           <p> <i class="fas fa-envelope"></i> Email:
           <a href="mailto:tarekbarakat000@gmail.com">tarekbarakat000@gmail.com</a></p>
