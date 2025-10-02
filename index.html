@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarek Barakat CV | Full Stack Developer</title>
-<!-- Add Bootstrap 4 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<!-- Add custom CSS -->
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
 <style>
@@ -17,88 +15,74 @@
     padding: 0;
     line-height: 2;
     background: linear-gradient(90deg, #1e5799, #2989d8);
-  justify-content: center;
-  align-items: center;
+    text-align: center; /* Center everything by default */
   }
-  .social-icons { display: flex; justify-content: center; align-items: center; }
-  .icon { display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; margin: 0 10px; border-radius: 50%; text-decoration: none; transition: transform 0.5s; }
-  .icon:hover { transform: scale(1.4); }
-  .icon i { font-size: 2rem; color: #ffffff; }
+  .social-icons { display: flex; justify-content: center; align-items: center; gap: 12px; }
+  .icon { position: relative; display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; margin: 0 6px; border-radius: 50%; text-decoration: none; transition: transform 0.5s; }
+  .icon:hover { transform: scale(1.2); }
+  .icon i { font-size: 1.6rem; color: #ffffff; }
   .github { background-color: #333333; }
   .instagram { background-image: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
   .linkedin { background-color: #0077b5; }
-  .icon::before { content: attr(data-title); position: absolute; left: 50%; top: -20px; transform: translateX(-100%)translateY(100%) scale(0.2); background-color: rgba(0, 0, 0, 0.8); color: #ffffff; padding: 3px 8px; border-radius: 10px; font-size: 10px; opacity: 0; transition: opacity 0.3s, transform 0.9s; pointer-events: none; }
+  .icon::before { content: attr(data-title); position: absolute; left: 50%; top: -28px; transform: translateX(-50%) scale(0.9); background-color: rgba(0, 0, 0, 0.8); color: #ffffff; padding: 3px 8px; border-radius: 10px; font-size: 10px; opacity: 0; transition: opacity 0.3s, transform 0.3s; pointer-events: none; white-space: nowrap; }
   .icon:hover::before { transform: translateX(-50%) scale(1); opacity: 1; }
-  header { color: #ffffff; text-align: center; padding-top: 3rem; padding-bottom: 2rem; background-color: rgba(0, 0, 0, 0.497); }
+
+  header { color: #ffffff; text-align: center; padding-top: 3rem; padding-bottom: 2rem; background-color: rgba(0, 0, 0, 0.35); }
   h1 { font-size: 2rem; margin-bottom: 0; }
-  .container { max-width: 1020px; margin: 0 auto; padding: 1rem; background-color: #ffffff; box-shadow: 0px 0px 10px 1px rgb(0, 0, 0); }
-  .nav-link { margin: 1px; font-size: 1.1rem; color: #ffffff; background-color: #0071bc; transition: all 0.1s ease; }
+  .container { max-width: 1020px; margin: 1rem auto 2rem; padding: 1rem; background-color: #ffffff; box-shadow: 0px 0px 10px 1px rgb(0, 0, 0); border-radius: 10px; }
+
+  /* Center tabs */
+  .nav { justify-content: center; }
+  .nav-link { margin: 1px; font-size: 1.1rem; color: #ffffff; background-color: #0071bc; transition: all 0.1s ease; border-radius: 8px 8px 0 0; }
   .nav-link:hover { color: #ffffff; background-color: rgb(112, 5, 5); transition: all 0.4s ease; }
-  .nav-link.active{ color: #000000; background-color: #ffffff; border: 8px solid; font-style:normal; font-weight: bold; }
+  .nav-link.active{ color: #000000; background-color: #ffffff; border: 8px solid; border-bottom: 0; font-weight: bold; }
+
   .tab-content { padding: 1.5rem; background-color: #ffffff3a; }
   section h2 { font-size: 1.8rem; margin-bottom: 1rem; }
-  section{ padding: 1.5rem 1rem; border: 1px solid #0071bc; border-radius: 1rem; margin: 18px 10px; text-align: justify; box-shadow: 1px 1px 8px 1px rgb(0, 0, 0); background-color: #ffffff; }
-  ol { display: inline-block; padding: 5px 10px; background-color: #4a89dc; color: #fff; border-radius: 1rem; margin: 10px 0px; box-shadow: 1px 1px 8px 1px rgb(0, 0, 0); }
-  h3,h5,p{ text-align: center; }
-  footer{ background-color: rgba(255, 255, 255, 0.8); border-radius: 1rem; text-align: center; font-size: x-large; color: red; box-shadow: 1px 1px 8px 1px rgb(0, 0, 0); }
+  section{ padding: 1.5rem 1rem; border: 1px solid #0071bc; border-radius: 1rem; margin: 18px 10px; text-align: center; box-shadow: 1px 1px 8px 1px rgb(0, 0, 0); background-color: #ffffff; }
+  h3,h5,p{ text-align: center; margin-left: auto; margin-right: auto; }
+  footer{ background-color: rgba(255, 255, 255, 0.9); border-radius: 1rem; text-align: center; font-size: x-large; color: red; box-shadow: 1px 1px 8px 1px rgb(0, 0, 0); }
+
+  /* Reusable grid & card (same vibe as Core Skills) */
+  .skills { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; font-family: 'Inter', sans-serif; text-align: center; }
+  .skills-title { font-size: 2rem; font-weight: 700; margin-bottom: 2.5rem; color: #1e293b; }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+
+  .skill-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.4rem;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    height: 100%;
+  }
+  .skill-card:hover { transform: translateY(-6px); box-shadow: 0 12px 20px rgba(0,0,0,0.12); }
+  .skill-card h3 { font-size: 1.2rem; margin-bottom: 0.7rem; color: #2563eb; }
+  .skill-card p { font-size: 0.98rem; line-height: 1.6; color: #475569; margin: 0; }
+
+  /* Chips for responsibilities/points */
+  .chip-wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px; }
+  .chip {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #eef2ff; border: 1px solid #c7d2fe; color: #3730a3;
+    padding: 10px 14px; border-radius: 999px; font-weight: 600; font-size: 0.95rem;
+    box-shadow: 0 4px 8px rgba(55,48,163,0.1);
+  }
+  .chip i { margin-right: 8px; }
+
+  /* Link cards for website showcases */
+  .link-card { text-decoration: none; color: #0f172a; font-weight: 700; display: block; }
+  .link-card:hover { color: #1d4ed8; }
+
   @media (max-width: 767px) {
-    h1 { font-size: 1rem; }
-    .container { width: 100%; padding: 0 0rem; }
+    h1 { font-size: 1.2rem; }
+    .container { width: 100%; padding: 0 0rem; border-radius: 0; }
     .nav-link { font-size: 1rem; }
     section h2 { width: 100%; font-size: 1.5rem; }
     section { width: 100%; margin: 12px 5px; padding: 1rem; }
-    ol { font-size: 0.8rem; padding: 3px 6px; }
-    h3, h5, p { font-size: 0.9rem; }
+    h3, h5, p { font-size: 0.95rem; }
     footer { font-size: large; }
   }
-
-  .skills {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  font-family: 'Inter', sans-serif;
-  text-align: center;
-}
-
-.skills-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
-  color: #1e293b;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.skill-card {
-  background: #ffffff;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.12);
-}
-
-.skill-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: #2563eb;
-}
-
-.skill-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #475569;
-  margin: 0;
-}
-
 </style>
 </head>
 <body>
@@ -138,11 +122,6 @@
         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
         role="tab" aria-controls="contact" aria-selected="false"> <i class="fas fa-envelope"> </i> Contact </a>
       </li>
-      <!-- <li class="nav-item" role="presentation">
-        <a class="nav-link" id="download-tab" href="https://drive.google.com/file/d/1zzjJhNPzkdW0oftJNMBuwKE2R1CYgXQ4/view?usp=share_link" download="Tarek Barakat CV.pdf">
-          <i class="fas fa-download"></i> Download
-        </a>
-      </li> -->
     </ul>
 
     <div class="tab-content" id="myTabContent">
@@ -163,15 +142,28 @@
             awarded Top 20 in the ITEC 2025 Southeast Asia competition. With a blend of technical expertise, teaching experience,
             and marketing skills, I deliver impactful and innovative digital solutions.
           </p>
-          </section>
-          <section>
-            <h4>Highlights</h4>
-            <ul>
-            <li>PhD (ICT) candidate at Al-Madinah International University; Fractify: AI-driven diagnostic support for fractures, osteoporosis and early bone cancer using X-ray imaging (ITEC 2025 Top 20).</li>
-            <li>End-to-end builds with Laravel, AngularJS, Ionic, TypeScript, PHP; WordPress and Shopify e-commerce.</li>
-            <li>SEO and performance marketing across Meta, Google, and Snapchat Ads.</li>
-            <li>Teaching undergraduate Visual Programming, Algorithms & Data Structures & Management Information System.</li>
-          </ul>
+        </section>
+
+        <section>
+          <h4>Highlights</h4>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <h3>🎓 PhD (ICT) — Fractify</h3>
+              <p>AI‑driven diagnostic support for fractures & early bone cancer using X‑ray. ITEC 2025 Top 20.</p>
+            </div>
+            <div class="skill-card">
+              <h3>🛠️ End‑to‑End Engineering</h3>
+              <p>Laravel, AngularJS, Ionic, TS/JS, PHP; WordPress & Shopify e‑commerce builds.</p>
+            </div>
+            <div class="skill-card">
+              <h3>🚀 Growth & SEO</h3>
+              <p>SEO and performance marketing on Meta, Google & Snapchat Ads.</p>
+            </div>
+            <div class="skill-card">
+              <h3>👨‍🏫 Teaching</h3>
+              <p>Lecturing Visual Programming, Algorithms & Data Structures & MIS (undergraduate).</p>
+            </div>
+          </div>
         </section>
       </div>
 
@@ -188,10 +180,10 @@
             <h3>Al-Madinah International University</h3>
             <h5>Volunteer Lecturer – Visual Programming, Algorithms & Data Structures & Management Information System</h5>
             <p>Oct 2024 – Present • Kuala Lumpur, Malaysia</p>
-            <ul>
-              <li>Taught core bachelor’s subjects (Visual Programming, Algorithms & Data Structures) with lectures, tutorials, and labs.</li>
-              <li>Mentored students to apply concepts to real-world development tasks.</li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fas fa-chalkboard-teacher"></i> Lectures, tutorials & labs</div>
+              <div class="chip"><i class="fas fa-project-diagram"></i> Real‑world application mentoring</div>
+            </div>
           </div>
         </section>
 
@@ -200,12 +192,13 @@
             <h3>Alphia Ventures Sdn Bhd</h3>
             <h5>Full Stack Software Developer</h5>
             <p>Jun 2024 – Present • Kuala Lumpur, Malaysia</p>
-            <ul>
-              <li>Developed AI-driven software solutions for travel agencies using Laravel (PHP), automating the entire workflow from task and data processing to WhatsApp notifications, invoice generation, and accounting integration.</li>
-              <li>Developed mobile apps using TypeScript, AngularJS & Ionic.</li>
-              <li>Created WordPress sites for education, course management, Woo and appointment bookings.</li>
-              <li>Managed frontend/backend for 3–4 Shopify stores.</li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fas fa-robot"></i> AI travel automation in Laravel</div>
+              <div class="chip"><i class="fab fa-whatsapp"></i> WhatsApp alerts & invoicing</div>
+              <div class="chip"><i class="fas fa-mobile-alt"></i> TypeScript, AngularJS & Ionic apps</div>
+              <div class="chip"><i class="fab fa-wordpress-simple"></i> WordPress (education, LMS, bookings)</div>
+              <div class="chip"><i class="fab fa-shopify"></i> Shopify frontend & backend (3–4 stores)</div>
+            </div>
           </div>
         </section>
 
@@ -214,22 +207,22 @@
             <h3>OXYZ Health & Wellness Sdn Bhd</h3>
             <h5>Full Stack Web Developer, SEO Specialist & Online Digital Marketing</h5>
             <p>Apr 2023 – Jun 2024 • Kuala Lumpur, Malaysia</p>
-            <ul>
-              <li>Developed and optimized 6 websites (e‑commerce & landing) with full SEO and Google tools; managed Google Ads.</li>
-              <li>Integrated third‑party software via API.</li>
-              <li>Planned offline marketing; domain knowledge in Stem Cell Therapy & Biological Medicine.</li>
-              <li>Managed Arabic team operations; trained Chinese team in marketing & sales.</li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fas fa-globe"></i> 6 sites (e‑commerce & landing)</div>
+              <div class="chip"><i class="fas fa-search"></i> Full SEO + Google tools</div>
+              <div class="chip"><i class="fas fa-bullseye"></i> Google Ads management</div>
+              <div class="chip"><i class="fas fa-plug"></i> Third‑party API integrations</div>
+              <div class="chip"><i class="fas fa-users"></i> Ops & team training (AR/CN)</div>
+            </div>
+
             <br><h4>Sample Websites</h4>
-            <div style="text-align: center;">
-              <ul style="display: inline-block;">
-                <li style="border-radius: 20px; display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://oxyzhealth.com/" style="text-decoration: none; color: black;">OXYZ Health</a></li>
-                <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://oxyzwellness.com/" style="text-decoration: none; color: black;">OXYZ Health & Wellness</a></li>
-                <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://oxyzcell.com/" style="text-decoration: none; color: black;">OXYZ Cell</a></li><br>
-                <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://oxyztech.com/" style="text-decoration: none; color: black;">OXYZ Technology</a></li>
-                <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://sa.oxyzhealth.com/" style="text-decoration: none; color: black;">SA OXYZ Health</a></li>
-                <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="http://ar.oxyzhealth.com/products" style="text-decoration: none; color: black;">AR OXYZ Health</a></li>
-              </ul>
+            <div class="skills-grid">
+              <a class="skill-card link-card" href="https://oxyzhealth.com/" target="_blank">OXYZ Health</a>
+              <a class="skill-card link-card" href="https://oxyzwellness.com/" target="_blank">OXYZ Health & Wellness</a>
+              <a class="skill-card link-card" href="https://oxyzcell.com/" target="_blank">OXYZ Cell</a>
+              <a class="skill-card link-card" href="https://oxyztech.com/" target="_blank">OXYZ Technology</a>
+              <a class="skill-card link-card" href="https://sa.oxyzhealth.com/" target="_blank">SA OXYZ Health</a>
+              <a class="skill-card link-card" href="http://ar.oxyzhealth.com/products" target="_blank">AR OXYZ Health</a>
             </div>
           </div>
         </section>
@@ -239,17 +232,20 @@
             <h3>VSH Technology Sdn Bhd</h3>
             <h5>Web Developer/Designer, SEO Specialist & Online Digital Marketing</h5>
             <p>Nov 2021 – Aug 2022 • Kuala Lumpur, Malaysia</p>
-            <ul>
-              <li>Developed and designed 6 e‑commerce/landing sites with SEO; ran Google Ads for 3 sites; integrated Analytics, Search Console, Maps, Ads.</li>
-            </ul>
-            <ul style="display: inline-block;">
-              <li style="border-radius: 20px; display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://lockpro.com.my/" style="text-decoration: none; color: black;">Lockpro Technology</a></li>
-              <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://www.vshgroup.com.my/" style="text-decoration: none; color: black;">VSH Technology</a></li>
-              <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://hiktech.com.my/" style="text-decoration: none; color: black;">HIK Technology</a></li>
-              <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="http://www.wbdpower.com.my/" style="text-decoration: none; color: black;">WBD Power</a></li>
-              <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://szsmarthome.com.my/" style="text-decoration: none; color: black;">SZ Smart Home</a></li>
-              <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://venusnetwork.com.my/" style="text-decoration: none; color: black;">Venus Network</a></li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fas fa-store"></i> 6 e‑commerce/landing builds</div>
+              <div class="chip"><i class="fas fa-ad"></i> Google Ads for 3 sites</div>
+              <div class="chip"><i class="fas fa-chart-line"></i> Analytics, Search Console, Maps</div>
+            </div>
+
+            <div style="margin-top: 12px;" class="skills-grid">
+              <a class="skill-card link-card" href="https://lockpro.com.my/" target="_blank">Lockpro Technology</a>
+              <a class="skill-card link-card" href="https://www.vshgroup.com.my/" target="_blank">VSH Technology</a>
+              <a class="skill-card link-card" href="https://hiktech.com.my/" target="_blank">HIK Technology</a>
+              <a class="skill-card link-card" href="http://www.wbdpower.com.my/" target="_blank">WBD Power</a>
+              <a class="skill-card link-card" href="https://szsmarthome.com.my/" target="_blank">SZ Smart Home</a>
+              <a class="skill-card link-card" href="https://venusnetwork.com.my/" target="_blank">Venus Network</a>
+            </div>
           </div>
         </section>
 
@@ -258,9 +254,13 @@
             <h3>Innodatatics — USA</h3>
             <h5>Internship Project — eCommerce Portal (Shopping Cart)</h5>
             <p>Nov 2022 – Jan 2023 • Online</p>
-            <ul>
-              <li>6‑week internship: ReactJS, MongoDB, NodeJS & TypeScript.</li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fab fa-react"></i> ReactJS</div>
+              <div class="chip"><i class="fas fa-database"></i> MongoDB</div>
+              <div class="chip"><i class="fab fa-node-js"></i> NodeJS</div>
+              <div class="chip"><i class="fab fa-js-square"></i> TypeScript</div>
+              <div class="chip"><i class="fas fa-clock"></i> 6‑week internship</div>
+            </div>
           </div>
         </section>
 
@@ -269,9 +269,12 @@
             <h3>Unreal Fakers</h3>
             <h5>Project Based — Web Developer/Designer, SEO & Digital Marketing</h5>
             <p>Aug 2021 – Feb 2022 • Kuala Lumpur, Malaysia</p>
-            <ul>
-              <li>Business development, web design (WIX), SEO and Google Ads for a deepfake technology startup.</li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fas fa-briefcase"></i> Business development</div>
+              <div class="chip"><i class="fas fa-pencil-ruler"></i> Web design (WIX)</div>
+              <div class="chip"><i class="fas fa-search"></i> SEO</div>
+              <div class="chip"><i class="fab fa-google"></i> Google Ads</div>
+            </div>
           </div>
         </section>
 
@@ -280,16 +283,19 @@
             <h3>KM Software Services</h3>
             <h5>Web Developer/Designer, SEO Specialist & Digital Marketing</h5>
             <p>May 2021 – Nov 2021 • Cyberjaya, Malaysia</p>
-            <ul>
-              <li>Managed multiple sites and social media; ran Facebook/Instagram ads; achieved first‑page Google ranking within 3 months for one site.</li>
-            </ul>
-            <ul style="display: inline-block;">
-              <li style="border-radius: 20px; display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://www.kmsoftwareservices.com/" style="text-decoration: none; color: black;">KM Software Services</a></li>
-              <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://www.kmassignmentservices.com/" style="text-decoration: none; color: black;">KM Assignment Services</a></li>
-              <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://www.pkfoodstreet.com/" style="text-decoration: none; color: black;">PK Food Street</a></li>
-              <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://www.kmfoodscan.com/" style="text-decoration: none; color: black;">KM Food Scan</a></li>
-              <li style="border-radius: 20px;display: inline-block; background-color: white; color: black; padding: 5px 5px; box-shadow: 0 0 5px blue; margin-top: 5px;"><a href="https://www.adbuzxer.com/" style="text-decoration: none; color: black;">AdBuzxer</a></li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fas fa-sitemap"></i> Multi‑site & social management</div>
+              <div class="chip"><i class="fab fa-facebook"></i> Facebook/Instagram Ads</div>
+              <div class="chip"><i class="fas fa-trophy"></i> 1st‑page Google rank in 3 months</div>
+            </div>
+
+            <div style="margin-top: 12px;" class="skills-grid">
+              <a class="skill-card link-card" href="https://www.kmsoftwareservices.com/" target="_blank">KM Software Services</a>
+              <a class="skill-card link-card" href="https://www.kmassignmentservices.com/" target="_blank">KM Assignment Services</a>
+              <a class="skill-card link-card" href="https://www.pkfoodstreet.com/" target="_blank">PK Food Street</a>
+              <a class="skill-card link-card" href="https://www.kmfoodscan.com/" target="_blank">KM Food Scan</a>
+              <a class="skill-card link-card" href="https://www.adbuzxer.com/" target="_blank">AdBuzxer</a>
+            </div>
           </div>
         </section>
 
@@ -298,14 +304,16 @@
             <h3>Nahoalofq for Information Technology</h3>
             <h5>Internship — Web Developer/Designer, SEO & Digital Marketing</h5>
             <p>Oct 2020 – Mar 2021 • Riyadh, Saudi Arabia</p>
-            <ul>
-              <li>Web design, SEO tools, and Google Ads.</li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fas fa-laptop-code"></i> Web design</div>
+              <div class="chip"><i class="fas fa-tools"></i> SEO tools</div>
+              <div class="chip"><i class="fab fa-google"></i> Google Ads</div>
+            </div>
           </div>
         </section>
       </div>
 
-      <!-- Skills -->
+      <!-- Skills (unchanged) -->
       <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
         <div class="social-icons">
           <a href="https://github.com/Tarek997" class="icon github" data-title="GitHub"><i class="fab fa-github"></i></a>
@@ -314,9 +322,7 @@
         </div>
 
 <section class="skills">
-
   <div class="skills-grid">
-    <!-- AI & Automation -->
     <div class="skill-card">
       <h3>🤖 AI & Automation</h3>
       <p>
@@ -326,8 +332,6 @@
         AI Prompt Engineering
       </p>
     </div>
-
-    <!-- Web Development -->
     <div class="skill-card">
       <h3>🌐 Web Development</h3>
       <p>
@@ -337,8 +341,6 @@
         WordPress, Shopify, WooCommerce
       </p>
     </div>
-
-    <!-- Digital Marketing -->
     <div class="skill-card">
       <h3>📈 Digital Marketing</h3>
       <p>
@@ -348,8 +350,6 @@
         Social Media Marketing
       </p>
     </div>
-
-    <!-- Design & Creative -->
     <div class="skill-card">
       <h3>🎨 Design & Creative</h3>
       <p>
@@ -358,8 +358,6 @@
         Figma, Canva
       </p>
     </div>
-
-    <!-- Project & CRM -->
     <div class="skill-card">
       <h3>📂 Project & CRM</h3>
       <p>
@@ -367,8 +365,6 @@
         Strong Communication & Collaboration
       </p>
     </div>
-
-    <!-- IT Infrastructure -->
     <div class="skill-card">
       <h3>🖥️ IT Infrastructure</h3>
       <p>
@@ -378,7 +374,6 @@
     </div>
   </div>
 </section>
-
       </div>
 
       <!-- Freelance -->
@@ -389,14 +384,13 @@
           <a href="https://www.linkedin.com/in/tarek-barakat-software-engineer/" class="icon linkedin" data-title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <section>
-          <h4>Freelance</h4>
           <p>Managing multiple freelance projects in website development & digital marketing across:</p>
-          <ul>
-            <li>Woo‑Commerce & food reseller store, distribution — Ontario & Ottawa, Canada</li>
-            <li>Real estate and car rentals — Dubai, UAE</li>
-            <li>Developed a recruitment system for Riyadh (Saudi Arabia) and the Philippines, integrating local payment methods tailored to each country’s requirements.</li>
-            <li>CACAO industry — Kuala Lumpur, Malaysia</li>
-          </ul>
+          <div class="skills-grid">
+            <div class="skill-card"><h3>🍽️ Woo‑Commerce</h3><p>Food reseller & distribution — Ontario & Ottawa, Canada</p></div>
+            <div class="skill-card"><h3>🏙️ Real Estate & Rentals</h3><p>Property & car rentals — Dubai, UAE</p></div>
+            <div class="skill-card"><h3>🧑‍💼 Recruitment System</h3><p>Riyadh (KSA) & Philippines with local payments</p></div>
+            <div class="skill-card"><h3>🌱 CACAO Industry</h3><p>Kuala Lumpur, Malaysia</p></div>
+          </div>
         </section>
       </div>
 
@@ -412,10 +406,10 @@
           <div class="education">
             <h3>PhD of Information & Communication Technology (ICT)</h3>
             <h6>Al‑Madinah International University, Kuala Lumpur — Sep 2023 – Present</h6>
-            <ul>
-              <li>Research (Fractify): AI‑Driven Diagnostic & Treatment Support for Bone Fractures and Early Bone Cancer using X‑Ray Imaging.</li>
-              <li>Qualified Top 50, advanced to Top 20 in ITEC 2025 Southeast Asia Competition (Fractify).</li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fas fa-brain"></i> Research: Fractify (AI X‑Ray Diagnostics)</div>
+              <div class="chip"><i class="fas fa-trophy"></i> ITEC 2025 SEA: Top 50 → Top 20</div>
+            </div>
           </div>
         </section>
 
@@ -423,10 +417,11 @@
           <div class="education">
             <h3>Master of Information Technology (IT)</h3>
             <h6>Infrastructure University Kuala Lumpur (IUKL), Kuala Lumpur — Sep 2020 – Jul 2023</h6>
-            <ul>
-              <li>Mixed mode (courses & research). Focus on Software Engineering (e.g., Human Computer Interaction). Graduated with 3.585 GPA.</li>
-              <li>Thesis: IoT Pandemic Response during COVID‑19 in Malaysian Healthcare.</li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fas fa-graduation-cap"></i> Mixed mode • Software Engineering focus</div>
+              <div class="chip"><i class="fas fa-star"></i> GPA 3.585</div>
+              <div class="chip"><i class="fas fa-notes-medical"></i> Thesis: IoT Pandemic Response (MY Healthcare)</div>
+            </div>
           </div>
         </section>
 
@@ -434,10 +429,11 @@
           <div class="education">
             <h3>Bachelor of Computer Science</h3>
             <h6>King Khalid University (KKU), Abha — Sep 2014 – May 2019</h6>
-            <ul>
-              <li>Graduated with 3.71 GPA. Capstone “Measurement and Evaluation Unit (MEU)” applied at university; awarded best project.</li>
-              <li>Java system to analyze student marks from Excel, store in SQLite, perform statistics, and generate PDF reports (teacher/department/college). Implemented for 1 year at university.</li>
-            </ul>
+            <div class="chip-wrap">
+              <div class="chip"><i class="fas fa-star"></i> GPA 3.71 • Best capstone project</div>
+              <div class="chip"><i class="fas fa-file-pdf"></i> MEU: Java + SQLite + PDF stats & reports</div>
+              <div class="chip"><i class="fas fa-university"></i> Deployed 1 year at KKU</div>
+            </div>
           </div>
         </section>
       </div>
@@ -456,14 +452,18 @@
             <div class="cert-meta">
               <span class="cert-year">📅 2022</span>
             </div>
-            <ul class="cert-details">
-              <li><strong>Frontend & Backend:</strong> HTML, CSS & Bootstrap 4, JavaScript, TypeScript, ReactJS, AngularJS,
-                NodeJS, ExpressJS, MongoDB, DevOps.</li>
-              <li>Completed <strong>100+ hours</strong> of training, tasks & projects.</li>
-              <li>Undertook a <strong>6-week internship</strong> with Innodatatics (USA).</li>
-            </ul>
+            <div class="chip-wrap" style="margin-top: 12px;">
+              <div class="chip"><i class="fas fa-code"></i> HTML, CSS, Bootstrap 4</div>
+              <div class="chip"><i class="fab fa-js"></i> JavaScript & TypeScript</div>
+              <div class="chip"><i class="fab fa-react"></i> ReactJS</div>
+              <div class="chip"><i class="fab fa-angular"></i> AngularJS</div>
+              <div class="chip"><i class="fab fa-node-js"></i> NodeJS & ExpressJS</div>
+              <div class="chip"><i class="fas fa-database"></i> MongoDB</div>
+              <div class="chip"><i class="fas fa-infinity"></i> DevOps</div>
+              <div class="chip"><i class="fas fa-hourglass-half"></i> 100+ hours tasks & projects</div>
+              <div class="chip"><i class="fas fa-briefcase"></i> 6‑week internship (Innodatatics, USA)</div>
+            </div>
           </section>
-
       </div>
 
       <!-- Contact -->
@@ -486,7 +486,6 @@
     </div>
   </main>
 
-  <!-- Add Bootstrap 4 JavaScript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
