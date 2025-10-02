@@ -51,6 +51,54 @@
     h3, h5, p { font-size: 0.9rem; }
     footer { font-size: large; }
   }
+
+  .skills {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #1e293b;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+}
+
+.skill-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+.skill-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
 </style>
 </head>
 <body>
@@ -72,7 +120,7 @@
       </li>
       <li class="nav-item" role="presentation">
         <a class="nav-link" id="skills-tab" data-toggle="tab" href="#skills"
-        role="tab" aria-controls="skills" aria-selected="false"> <i class="fas fa-star"> </i> Skills </a>
+        role="tab" aria-controls="skills" aria-selected="false"> <i class="fas fa-star"> </i> Core Skills </a>
       </li>
       <li class="nav-item" role="presentation">
         <a class="nav-link" id="freelance-tab" data-toggle="tab" href="#freelance"
@@ -266,68 +314,67 @@
         </div>
 
 <section class="skills">
-  <h2 class="skills-title">Core Skills & Expertise</h2>
 
   <div class="skills-grid">
     <!-- AI & Automation -->
     <div class="skill-card">
       <h3>🤖 AI & Automation</h3>
-      <ul>
-        <li>OpenAI (ChatGPT, LLMs), Google Gemini, DeepSeek</li>
-        <li>GitHub Copilot, Banana AI</li>
-        <li>n8n (workflow automation), Queen</li>
-        <li>AI Prompt Engineering</li>
-      </ul>
+      <p>
+        OpenAI (ChatGPT, LLMs), Google Gemini, DeepSeek<br>
+        GitHub Copilot, Banana AI<br>
+        n8n (workflow automation), Qwen<br>
+        AI Prompt Engineering
+      </p>
     </div>
 
     <!-- Web Development -->
     <div class="skill-card">
       <h3>🌐 Web Development</h3>
-      <ul>
-        <li>Laravel, PHP, AngularJS, Ionic</li>
-        <li>JavaScript, TypeScript, HTML, CSS</li>
-        <li>Git (version control)</li>
-        <li>WordPress, Shopify, WooCommerce</li>
-      </ul>
+      <p>
+        Laravel, PHP, AngularJS, Ionic<br>
+        JavaScript, TypeScript, HTML, CSS<br>
+        Git (version control)<br>
+        WordPress, Shopify, WooCommerce
+      </p>
     </div>
 
     <!-- Digital Marketing -->
     <div class="skill-card">
       <h3>📈 Digital Marketing</h3>
-      <ul>
-        <li>SEO (On-page & Off-page)</li>
-        <li>Meta Ads, Google Ads, Snapchat Ads</li>
-        <li>Blogging & Content Strategy</li>
-        <li>Social Media Marketing</li>
-      </ul>
+      <p>
+        SEO (On-page & Off-page)<br>
+        Meta Ads, Google Ads, Snapchat Ads<br>
+        Blogging & Content Strategy<br>
+        Social Media Marketing
+      </p>
     </div>
 
     <!-- Design & Creative -->
     <div class="skill-card">
       <h3>🎨 Design & Creative</h3>
-      <ul>
-        <li>Adobe Photoshop, Illustrator, After Effects</li>
-        <li>Adobe XD (UI/UX), Affinity Designer</li>
-        <li>Figma, Canva</li>
-      </ul>
+      <p>
+        Adobe Photoshop, Illustrator, After Effects<br>
+        Adobe XD (UI/UX), Affinity Designer<br>
+        Figma, Canva
+      </p>
     </div>
 
     <!-- Project & CRM -->
     <div class="skill-card">
-      <h3>📂 Project & CRM Tools</h3>
-      <ul>
-        <li>Trello, HubSpot, Microsoft Planner</li>
-        <li>Strong Communication & Collaboration</li>
-      </ul>
+      <h3>📂 Project & CRM</h3>
+      <p>
+        Trello, HubSpot, Microsoft Planner<br>
+        Strong Communication & Collaboration
+      </p>
     </div>
 
     <!-- IT Infrastructure -->
     <div class="skill-card">
       <h3>🖥️ IT Infrastructure</h3>
-      <ul>
-        <li>Server rack setup & configuration</li>
-        <li>Switches & networking basics</li>
-      </ul>
+      <p>
+        Server rack setup & configuration<br>
+        Switches & networking basics
+      </p>
     </div>
   </div>
 </section>
